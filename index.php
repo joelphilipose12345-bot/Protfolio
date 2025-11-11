@@ -1,0 +1,379 @@
+<?php
+if($_POST){
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $message = $_POST["message"];
+
+    //connect to Database
+    $conn = mysqli_connect("localhost","root","","portfolio");
+    
+    //write SQL query
+    $sql="INSERT INTO `portfolio`(`id`, `name`, `email`, `message`) VALUES ('Null','$name','$email','$message')";
+
+    //execute the query
+    $result = mysqli_query($conn, $sql);
+
+    //user feedback
+   if ($result) {
+        echo "<script>alert('Message Sent Successfully!');</script>";
+    } else {
+        echo "<script>alert('Message Sending Failed!');</script>";
+    }
+    }
+
+?>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Css/style.css" />
+<link rel="icon" href="IMG/IMG_20231031_001436.jpg">
+
+  </head>
+  <body>
+    <header>
+      <a href="#"><img class="logo" src="IMG/Logo png-01.png" alt="" /></a>
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILL</a>
+        <a href="#portfolio">PORTFOLIO</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <br><br>
+        <h1>Joel Mathew Philipose</h1>
+        <p>Designed with instinct, refined with intent</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-title">
+        <h2>ABOUT ME</h2>
+        <p>Design with clarity. Create with purpose</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-img">
+          <img src="IMG/Layer 0.png" alt="Joel Mathew Philipose" />
+        </div>
+
+        <div class="about-text">
+          <p>
+            I’m Joel Mathew Philipose, a graphic designer who loves bringing
+            ideas to life through motion, logos, branding, and visually striking
+            posters. My style blends modern minimalism with a futuristic edge,
+            creating designs that feel clean yet captivating. I’m constantly
+            inspired by the world of design — from color palettes to typography
+            and composition that spark new ideas. Through my work, I aim to
+            communicate meaning, emotion, and the effort behind every detail,
+            ensuring each project speaks for itself. For me, design isn’t just
+            about visuals — it’s about connection and creativity in every pixel
+          </p>
+
+          <a class="btn1" href="IMG/cv.pdf" download="Joel_CV.pdf">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="skills-title">
+        <h2>MY SKILLS</h2>
+        <p>
+          A versatile designer skilled in web design, branding, and motion
+          graphics.
+        </p>
+      </div>
+
+      <div class="skills-container">
+        <div class="skills-box">
+          <h3>PROGRAMMING SKILLS</h3>
+  <div class="skill">
+    <div class="skill-name">Brand Identity Design</div>
+    <div class="skill-bar" data-percent="90" data-duration="2000">
+      <div class="skill-fill"></div>
+      <div class="skill-circle"><span class="skill-number">0%</span></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Logo Design</div>
+    <div class="skill-bar" data-percent="85" data-duration="2000">
+      <div class="skill-fill"></div>
+      <div class="skill-circle"><span class="skill-number">0%</span></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Poster & Print Design</div>
+    <div class="skill-bar" data-percent="85" data-duration="2000">
+      <div class="skill-fill"></div>
+      <div class="skill-circle"><span class="skill-number">0%</span></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Typography & Layout</div>
+    <div class="skill-bar" data-percent="80" data-duration="2000">
+      <div class="skill-fill"></div>
+      <div class="skill-circle"><span class="skill-number">0%</span></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Motion Graphics Design</div>
+    <div class="skill-bar" data-percent="90" data-duration="2000">
+      <div class="skill-fill"></div>
+      <div class="skill-circle"><span class="skill-number">0%</span></div>
+    </div>
+  </div>
+</div>
+  </section>
+<!-- ===== SOFTWARE SKILLS SECTION ===== -->
+<section class="software-skills">
+  <h2 class="software-title">Software Skills</h2>
+
+  <div class="software-columns">
+    <!-- Photoshop -->
+    <div class="software-card">
+      <div class="icon-wrapper">
+        <img src="IMG/photoshop icon.png" alt="Photoshop">
+        <div class="percentage">80%</div>
+      </div>
+      <h3>Photoshop</h3>
+      <p>I use Photoshop mainly for poster design and creative photo manipulation. I’m self-taught and completed a 100-day challenge to master every key feature. Through this, I learned powerful techniques like gradient layer masking to create reflections and realistic textures. Photoshop has become my strongest tool for visual storytelling and detailed compositions.</p>
+    </div>
+
+    <!-- Illustrator -->
+    <div class="software-card">
+      <div class="icon-wrapper">
+        <img src="IMG/illustrator icon.png" alt="Illustrator">
+        <div class="percentage">90%</div>
+      </div>
+      <h3>Illustrator</h3>
+      <p>Illustrator is where I bring clean, professional ideas to life — from typography and infographics to logos and vector characters. I enjoy how flexible and satisfying it feels to create with tools like Repeat Grid and Clipping Mask. It was my main tool for typography projects, allowing me to design expressive font-based posters.</p>
+    </div>
+
+    <!-- After Effects -->
+    <div class="software-card">
+      <div class="icon-wrapper">
+        <img src="IMG/after-effects icon.png" alt="After Effects">
+        <div class="percentage">85%</div>
+      </div>
+      <h3>After Effects</h3>
+      <p>After Effects is my favorite for creating title animations, motion posters, and experimental visual effects. I’m comfortable with keyframes, timing, and compositing, which make animating smooth and rhythmic. I used it to create my short animation A Balloon’s Fate and a personal motion-graphics reel to showcase my animation and visual design skills.</p>
+    </div>
+
+    <!-- Premiere Pro -->
+    <div class="software-card">
+      <div class="icon-wrapper">
+        <img src="IMG/premiere-pro icon.png" alt="Premiere Pro">
+        <div class="percentage">70%</div>
+      </div>
+      <h3>Premiere Pro</h3>
+      <p>In Premiere Pro, I focus on editing trailers, cinematic sequences, and my dance performance videos. I enjoy experimenting with rhythm, pacing, and transition timing to create flow and energy. My edits are built around mood and emotion, with black-and-white color styles and dramatic cuts that enhance storytelling and audience engagement.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="portfolio" id="portfolio">
+  <h2 class="portfolio-title">My Portfolio</h2>
+
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <img src="IMG/Portfolio/Poster (1).jpg" alt="Poster 1">
+      <img src="IMG/Portfolio/Poster (2).jpg" alt="Poster 2">
+      <img src="IMG/Portfolio/Poster (10).jpg" alt="Poster 3">
+      <img src="IMG/Portfolio/Poster (11).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (12).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (13).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (14).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (15).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (16).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (17).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (18).jpg" alt="Poster 2">
+      <img src="IMG/Portfolio/Poster (19).jpg" alt="Poster 3">
+      <img src="IMG/Portfolio/Poster (20).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (21).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (22).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (23).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (24).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (25).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (26).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (27).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (28).jpg" alt="Poster 2">
+      <img src="IMG/Portfolio/Poster (29).jpg" alt="Poster 3">
+      <img src="IMG/Portfolio/Poster (30).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (3).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (31).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (32).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (33).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (34).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (35).jpg" alt="Poster 4">
+      <img src="IMG/Portfolio/Poster (38).jpg" alt="Poster 5">
+      <img src="IMG/Portfolio/Poster (9).jpg" alt="Poster 4">
+    </div>
+  </div>
+
+  <a href="works.html" class="btn3">All Works</a>
+</section>
+
+
+<!-- ===== CONNECT WITH ME SECTION ===== -->
+<section class="connect">
+  <h2 class="connect-title">Connect With Me</h2>
+
+  <div class="connect-grid">
+
+    <!-- Instagram -->
+    <div class="connect-card">
+      <img src="IMG/Insta.png" alt="Instagram QR" class="qr-img">
+      <div class="connect-info">
+        <i class="fa-brands fa-instagram"></i>
+        <h3>Instagram</h3>
+      </div>
+      <a href="https://instagram.com/your_instagram_id" target="_blank" class="connect-btn">Open Instagram</a>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="connect-card">
+      <img src="IMG/whatsapp (2).png" alt="WhatsApp QR" class="qr-img">
+      <div class="connect-info">
+        <i class="fa-brands fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+      </div>
+      <a href="https://wa.me/8714884791" target="_blank" class="connect-btn">Message Me</a>
+    </div>
+
+    <!-- YouTube -->
+    <div class="connect-card">
+      <img src="IMG/Youtube (2).png" alt="YouTube QR" class="qr-img">
+      <div class="connect-info">
+        <i class="fa-brands fa-youtube"></i>
+        <h3>Youtube</h3>
+      </div>
+      <a href="https://youtube.com/@joboy_motions?si=Z8vTuUx7G7ov0iAN" target="_blank" class="connect-btn">View Channel</a>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="connect-card">
+      <img src="IMG/linkdin.png" alt="LinkedIn QR" class="qr-img">
+      <div class="connect-info">
+        <i class="fa-brands fa-linkedin"></i>
+        <h3>Linkedin</h3>
+      </div>
+      <a href="https://www.linkedin.com/in/joel-mathew-philipose-437619290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="connect-btn">Visit Profile</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="contact" id="contact">
+  <h2>GET <span style="color:#00bcd4;">IN TOUCH</span></h2>
+  <p class="sub-text">Have a project in mind? Let’s bring your ideas to life. Reach out today — I’d love to collaborate!</p>
+
+  <div class="contact-container">
+    <div class="contact-details">
+      <h3>My Contact Details</h3>
+      <p><strong>Address:</strong><br>
+      Edapariyaram, Elanthoor, Pathanamthitta,<br>Kerala, India</p>
+
+      <p><strong>Email:</strong> joelphilipose12345@gmail.com<br><br>
+      <strong>Phone:</strong> +91 8714884791</p>
+    </div>
+
+    <div class="contact-form">
+      
+       <form action="" method = "Post">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn2">Send Message</button>
+    </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <footer>
+      <hr> © All Right Reserved. <span class= "blue"> Developed By  Joel Mathew</span>
+            
+
+  </footer>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const bars = document.querySelectorAll('.skill-bar');
+
+  function animateSkill(bar) {
+    const fill = bar.querySelector('.skill-fill');
+    const circle = bar.querySelector('.skill-circle');
+    const number = bar.querySelector('.skill-number');
+    const targetPercent = parseInt(bar.dataset.percent, 10);
+    const duration = parseInt(bar.dataset.duration, 10);
+    const barWidth = bar.clientWidth;
+
+    let startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentPercent = progress * targetPercent;
+
+
+      fill.style.width = `${currentPercent}%`;
+      circle.style.left = `${(barWidth * currentPercent) / 100}px`;
+      number.textContent = `${Math.round(currentPercent)}%`;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateSkill(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  bars.forEach(bar => observer.observe(bar));
+});
+</script>
+
+<script src="https://kit.fontawesome.com/a7e5df57e0.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
